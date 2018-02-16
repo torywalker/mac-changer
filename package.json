@@ -1,0 +1,34 @@
+{
+  "name": "mac-changer",
+  "version": "1.0.0",
+  "description": "A Node port of the mac-changer cli tool",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mac",
+    "address",
+    "change",
+    "node"
+  ],
+  "author": "Tory Walker <toryjwalker@gmail.com>",
+  "license": "GPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/torywalker/mac-changer.git"
+  },
+  "bin": {
+    "mac": "./index.js"
+  },
+  "dependencies": {
+    "chalk": "^2.3.1",
+    "commander": "^2.14.1",
+    "didyoumean": "^1.2.1"
+  },
+  "devDependencies": {
+    "eslint": "^4.17.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0"
+  }
+}
