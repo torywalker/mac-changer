@@ -27,7 +27,7 @@ npm install -g mac-changer
 
 ## Contributing
 
-Contributions are welcome. Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for code of conduct details, and the process for submitting pull requests.
+Contributions are welcome. Please read [CONTRIBUTING.md](CONTRIBUTING.md) for code of conduct details, and the process for submitting pull requests.
 
 
 ## License
