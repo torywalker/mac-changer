@@ -3,6 +3,7 @@
     "rules": {
         "arrow-body-style": "off",
         "comma-dangle": "off",
-        "no-console": "off"
+        "no-console": "off",
+        "object-curly-newline": "off"
     }
 }

@@ -3,11 +3,34 @@ const {
   execute,
   generateRandomAddress,
   getAllInterfaces,
-  getInterfaceSuggestion
+  getInterfaceSuggestion,
+  getMacAddressByIntf,
+  padRight
 } = require('./helpers');
 
+module.exports.displayAll = () => {
+  const allInterfaces = getAllInterfaces();
+  const intfFormatter = intf => `(${intf}):  `;
+  const padding = allInterfaces.reduce((acc, intf) => {
+    const { length } = intfFormatter(intf);
+    acc = length > acc ? length : acc; // eslint-disable-line no-param-reassign
+    return acc;
+  }, 10);
+
+  allInterfaces.forEach((intf) => {
+    const address = getMacAddressByIntf(intf);
+    const { result } = address;
+
+    if (result) {
+      const formattedAddress = result.substr(0, 17).toUpperCase();
+      const paddedIntf = padRight(padding, intfFormatter(intf));
+      console.log(`${paddedIntf}${chalk.green(formattedAddress)}`);
+    }
+  });
+};
+
 module.exports.displayAddress = (intf) => {
-  const address = execute(`ifconfig ${intf} | grep ether | sed 's/.*ether //'`);
+  const address = getMacAddressByIntf(intf);
   const { error, result } = address;
 
   if (error) {

@@ -35,3 +35,13 @@ module.exports.getInterfaceSuggestion = (intf, interfaces) => {
     ? `${generalError} Did you mean ${chalk.green(suggestion)}?`
     : generalError;
 };
+
+module.exports.getMacAddressByIntf = (intf) => {
+  return module.exports.execute(`ifconfig ${intf} | grep ether | sed 's/.*ether //'`);
+};
+
+module.exports.padRight = (padLength = 10, str) => {
+  if (typeof str === 'undefined') { return str; }
+  const pad = ' '.repeat(padLength);
+  return (str + pad).substring(0, padLength);
+};

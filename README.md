@@ -12,9 +12,10 @@ Usage: mac [options] <interface>
 
   Options:
 
-    -d, --display    Display the current MAC address
-    -r, --random     Set a random MAC address
-    -s, --set <mac>  Set the MAC address
+    -a, --all        display MAC addresses for available interfaces
+    -d, --display    display current MAC address
+    -r, --random     set random MAC address
+    -s, --set <mac>  set MAC address for interface
     -v, --version    output the version number
     -h, --help       output usage information
 ```
